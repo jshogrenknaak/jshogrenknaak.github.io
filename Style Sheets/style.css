@@ -1,0 +1,74 @@
+h1 {
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+}
+
+h2 {
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 15.4px;
+}
+
+h3 {
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 15.4px;
+}
+
+h4 {
+    font-family: Lato;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 20px;
+}
+
+p {
+    font-family: Lato;
+    font-size: 17px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+ul li{
+    font-family: Lato;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+pre {
+    font-family: Lato;
+    overflow-x:hidden;
+    white-space:pre-wrap;
+}
+
+.label-red{background-color:#db8782}
+.label-yellow{background-color:#f1cc65}
+.label-green{background-color:#a2ae8e}
+.label-mintgreen{background-color:#a2ddc9}
+.label-darkgreen{background-color:#99c0a5}
+.label-darkblue{background-color:#2b6297}
+.label-mrdgreen{background-color:#6f9370}
+.label-mrdred{background-color:#e46a76}
+.label-mrdpurple{background-color:#9574b4}
+.label-mrdyellow{background-color:#f1ac2d}
+.label-mrdblue{background-color:#194568}
+
+
