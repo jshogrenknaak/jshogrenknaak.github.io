@@ -136,7 +136,7 @@ My research focuses on probability theory and partial differential equations, in
 
             if (bib != null) {
                 list_entry += "<div id=\"bib" + paper_count + "\" style=\"display:none\">" + bib + "</div>"
-                list_entry += "<a href=\"javascript:copy(div" + paper_count + ",bib" + paper_count + ")\"> <span class=\"label label-success\">bib</span></a>"
+                list_entry += "<a href=\"javascript:copy(div" + paper_count + ",bib" + paper_count + ")\" class = \"button\" >[bib]</a>"
             }
 
             if (abstract != null) {
@@ -150,7 +150,7 @@ My research focuses on probability theory and partial differential equations, in
                 list_entry += " <a href=\"" + journal_link + "\" class = \"button\" >[journal]</a>"
 
             if (data != null)
-                list_entry += " <a href=\"" + data + "\"><span class=\"label label-default\">data</span></a>"
+                list_entry += " <a href=\"" + data + "\" class = \"button\" >[data]</a>"
 
             if (slides != null)
                 list_entry += " <a href=\"" + slides + "\" class = \"button\" >[slides]</a>"
