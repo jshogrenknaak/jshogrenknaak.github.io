@@ -150,78 +150,6 @@ I am a Stein Fellow in the <a href="https://statistics.stanford.edu/">Department
         document.write("<h2>Research</h2>")
         document.write("<ul>")
 
-        add_paper("Spectral clustering in the Gaussian mixture block model",
-            "Joint work with Tselil Schramm",
-            "arXiv: 2305.00979",
-            "https://arxiv.org/abs/2305.00979",
-            null,
-            "Gaussian mixture block models are distributions over graphs that strive to model modern networks: to generate a graph from such a model, we associate each vertex with a latent feature vector sampled from a mixture of Gaussians, and we add edge if and only if the feature vectors are sufficiently similar. The different components of the Gaussian mixture represent the fact that there may be different types of nodes with different distributions over features---for example, in a social network each component represents the different attributes of a distinct community. Natural algorithmic tasks associated with these networks are embedding (recovering the latent feature vectors) and clustering (grouping nodes by their mixture component). In this paper we initiate the study of clustering and embedding graphs sampled from high-dimensional Gaussian mixture block models, where the dimension of the latent feature vectors goes to infinity as the size of the network goes to infinity. This high-dimensional setting is most appropriate in the context of modern networks, in which we think of the latent feature space as being high-dimensional. We analyze the performance of canonical spectral clustering and embedding algorithms for such graphs in the case of 2-component spherical Gaussian mixtures, and begin to sketch out the information-computation landscape for clustering and embedding in these models.",
-            "https://arxiv.org/abs/2305.00979",
-            null,
-            null,
-            null,
-            null,
-            null
-        )
-
-        add_paper("Binary perceptron: efficient algorithms can find solutions in a rare well-connected cluster",
-            "Joint work with Emmanuel Abbe and Allan Sly",
-            "STOC 2022",
-            "https://arxiv.org/abs/2111.03084",
-            null,
-            "It was recently shown that almost all solutions in the symmetric binary perceptron are isolated, even at low constraint densities, suggesting that finding typical solutions is hard. In contrast, some algorithms have been shown empirically to succeed in finding solutions at low density. This phenomenon has been justified numerically by the existence of subdominant and dense connected regions of solutions, which are accessible by simple learning algorithms. In this paper, we establish formally such a phenomenon for both the symmetric and asymmetric binary perceptrons. We show that at low constraint density (equivalently for overparametrized perceptrons), there exists indeed a subdominant connected cluster of solutions with almost maximal diameter, and that an efficient multiscale majority algorithm can find solutions in such a cluster with high probability, settling in particular an open problem posed by Perkins-Xu '21. In addition, even close to the critical threshold, we show that there exist clusters of linear diameter for the symmetric perceptron, as well as for the asymmetric perceptron under additional assumptions.",
-            "https://arxiv.org/abs/2111.03084",
-            null,
-            null,
-            null,
-            null,
-            null
-        )
-
-        add_paper("Proof of the Contiguity Conjecture and Lognormal Limit for the Symmetric Perceptron",
-            "Joint work with Emmanuel Abbe and Allan Sly",
-            "FOCS 2021",
-            "https://arxiv.org/abs/2102.13069",
-            null,
-            "We consider the symmetric binary perceptron model, a simple model of neural networks that has gathered significant attention in the statistical physics, information theory and probability theory communities, with recent connections made to the performance of learning algorithms in Baldassi et al. '15. We establish that the partition function of this model, normalized by its expected value, converges to a lognormal distribution. As a consequence, this allows us to establish several conjectures for this model: (i) it proves the contiguity conjecture of Aubin et al. '19 between the planted and unplanted models in the satisfiable regime; (ii) it establishes the sharp threshold conjecture; (iii) it proves the frozen 1-RSB conjecture in the symmetric case, conjectured first by Krauth-Mézard '89 in the asymmetric case. In a recent concurrent work of Perkins-Xu [PX21], the last two conjectures were also established by proving that the partition function concentrates on an exponential scale. This left open the contiguity conjecture and the lognormal limit characterization, which are established here. In particular, our proof technique relies on a dense counter-part of the small graph conditioning method, which was developed for sparse models in the celebrated work of Robinson and Wormald.",
-            "https://arxiv.org/abs/2102.13069",
-            null,
-            null,
-            null,
-            "http://www.birs.ca/events/2021/5-day-workshops/21w5108/videos/watch/202108120814-Li.html?jwsource=cl",
-            null
-        )
-
-
-        add_paper("Mean Field Behavior during the Big Bang for Coalescing Random Walk",
-            "Joint work with Jonathan Hermon, Dong Yao, and Lingfu Zhang",
-            "<i>Annals of Probability</i> (2022)",
-            "https://arxiv.org/abs/2105.11585",
-            null,
-            "In this paper we consider the coalescing random walk model on general graphs G=(V,E). We set up a unified framework to study the leading order of decay rate  of P_t, the fraction of occupied sites at time t, and we are particularly interested in the `Big Bang' regime, where t << t_coal:=E[inf{s: there is only one particle at time s}]. Our results show that P_t satisfies certain `mean field behavior', if the graphs satisfy a certain `transience-like' condition. We apply this framework two families of graphs: (1) graphs given by configuration model with minimal degree at least 3, and (2) finite and infinite vertex-transitive graphs. In the first case, we show that for 1 << t << |V|, P_t decays in the order of t^{-1}, and tP_t is close to the probability that two particles starting from the root of the corresponding unimodular Galton-Watson tree never collide after one of them leaves the root. By taking the local weak limit, the convergence of tP_t is also proved for the corresponding unimodular Galton-Watson tree. For the second family of graphs, if we take a growing sequence of finite vertex-transitive graphs G_n=(V_n, E_n), such that the mean meeting time of two independent walkers t_meet is O(|V_n|) and the inverse of the spectral gap t_rel is o(|V_n|), we show for t_rel << t << t_coal, tP_t  = (1 + o(1))/P[two random walks never meet before time t]= 2t_meet/|V_n|. In addition, we define a certain natural `uniform transience' condition, and show that in the transitive setup it implies the above for all 1 << t << t_coal. The equality tP_t  = (1 + o(1))/P[two random walks never meet before time t] is also proved for all infinite transient transitive unimodular graphs, in particular, all transient  transitive amenable graphs.",
-            "https://arxiv.org/abs/2105.11585",
-            null,
-            null,
-            null,
-            null,
-            null
-        )
-
-        add_paper("Learning Sparse Graphons and the Generalized Kesten-Stigum Threshold",
-            "Joint work with Emmanuel Abbe and Allan Sly",
-            "<i>Annals of Statistics</i> (2023)",
-            "https://arxiv.org/abs/2006.07695",
-            null,
-            "The problem of learning graphons has attracted considerable attention across several scientific communities, with significant progress over the recent years in sparser regimes. Yet, the current techniques still require diverging degrees in order to succeed with efficient algorithms in the challenging cases where the local structure of the graph is homogeneous. This paper provides an efficient algorithm to learn graphons in the constant expected degree regime. The algorithm is shown to succeed in estimating the rank-k projection of a graphon in the L2 metric if the top k eigenvalues of the graphon satisfy a generalized Kesten-Stigum condition.",
-            "https://arxiv.org/abs/2006.07695",
-            null,
-            null,
-            null,
-            "https://www.youtube.com/watch?v=_QdrIQ5exF4",
-            null
-        )
-        
-
         add_paper("A trace theorem for Sobolev spaces on the Sierpinski gasket",
             "Joint work with Shiping Cao, Robert S. Strichartz, and Prem Talwai",
             "<i>Commun. Pure Appl. Anal.</i> (2020)",
@@ -233,20 +161,6 @@ I am a Stein Fellow in the <a href="https://statistics.stanford.edu/">Department
             null,
             null,
             "https://www.youtube.com/watch?v=_QdrIQ5exF4",
-            null
-        )
-
-        add_paper("Computing Eigenvalues and Eigenfunctions of Schrödinger Equations Using a Model Reduction Approach",
-            "Joint with Zhiwen Zhang",
-            "<i>Commun. Comput. Phys.</i> (2018)",
-            "https://global-sci.org/intro/article_detail/cicp/12319.html",
-            null,
-            "Let <i>F</i> be an NWUE distribution with mean 1 and <i>G</i> be the stationary renewal distribution of <i>F</i>. We would expect <i>G</i> to converge in distribution to the unit exponential distribution as its mean goes to 1. In this paper, we derive sharp bounds for the Kolmogorov distance between <i>G</i> and the unit exponential distribution, as well as between <i>G</i> and an exponential distribution with the same mean as <i>G</i>. We apply the bounds to geometric convolutions and to first passage times.",
-            null,
-            "https://global-sci.org/intro/article_detail/cicp/12319.html",
-            null,
-            null,
-            null,
             null
         )
 
