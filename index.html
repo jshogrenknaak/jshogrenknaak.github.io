@@ -141,7 +141,7 @@ My research focuses on probability theory and partial differential equations, in
 
             if (abstract != null) {
                 list_entry += "<div id=\"abstract" + paper_count + "\" style=\"display:none\">" + abstract + "</div>"
-                list_entry += "<a href=\"javascript:copy(div" + paper_count + ",abstract" + paper_count + ")\"> <span class=\"label label-mrdred\">abstract</span></a>"
+                list_entry += "<a href=\"javascript:copy(div" + paper_count + ",abstract" + paper_count + ")\" class = \"button\" >[abstract]</a>"
             }
             if (arxiv_link != null)
                 list_entry += " <a href=\"" + arxiv_link + "\" class = \"button\" >[arXiv]</a>"
