@@ -112,7 +112,7 @@ My research focuses on probability theory and partial differential equations, in
             list_entry += "<b>" + title + "</b>"
             if (link != null)
                 list_entry += "</a>"
-            list_entry += "<br>" + authors + ".<br>" + conference + ".</li>"
+            list_entry += "<br>" + authors + ".<br>" + conference
 
             if (bib != null) {
                 list_entry += "<div id=\"bib" + paper_count + "\" style=\"display:none\">" + bib + "</div>"
@@ -143,7 +143,7 @@ My research focuses on probability theory and partial differential equations, in
             if (msg != null)
                 list_entry += "<i>" + msg + "</i>"
 
-            list_entry += "<div id=\"div" + paper_count + "\" style=\"font-size:18px\"></div><br>"
+            list_entry +=".</li>" + "<div id=\"div" + paper_count + "\" style=\"font-size:18px\"></div><br>"
 
             document.write(list_entry)
 
