@@ -17,6 +17,31 @@
 
 </head>
 
+<style>
+.red { 
+ color : #f00; text-decoration : none;
+  
+  .green:link{
+    display:none;
+  }
+}
+
+.green { 
+ color : #0f0; text-decoration : none;
+}
+  
+.green:hover{
+  color: #black;
+  text-decoration: underline;
+  
+}
+
+.blue { 
+ color : #00f; text-decoration : none;
+}
+
+</style>
+	
 <script>
 function copy(dest, source) {
   if(dest.source == source) {
@@ -136,7 +161,7 @@ My research focuses on probability theory and partial differential equations, in
                 list_entry += " <a href=\"" + slides + "\"><span class=\"label label-info\">slides/poster</span></a>"
 
             if (talk != null)
-                list_entry += " <a href=\"" + talk + "\">[video]</a>"
+                list_entry += " <a href=\"" + talk + "\" class = \"red\" >[video]</a>"
 
             list_entry += "<br>"
 
