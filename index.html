@@ -206,10 +206,10 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 
         function add_talk(title, locations, abstract, slides, recording) {
             list_entry = "<li style=\"font-size:18px\">"
-            if (link != null)
+            if (title != null)
                 <!--list_entry += "<a href=\"" + link + "\">"-->
             list_entry += "<b>" + title + "</b>"
-            if (link != null)
+            if (locations != null)
                 list_entry += "</a>"
             list_entry += "<br>" + locations + ".<br>"
 
@@ -246,7 +246,9 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
         document.write("</ul>")
         
 </script>
+	
 <hr>
+	
 <!--
     <h2> Talks</h2>
     <ul>
