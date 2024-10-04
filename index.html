@@ -201,6 +201,55 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 	<span style="font-family: Lato; font-size:17px;">A collection of notes and other expository writing can be found <a href="Notes.html">here</a>.</span>
 <hr>
 
+<script>
+        talk_count = 0
+
+        function add_talk(title, locations, abstract, slides, recording) {
+            list_entry = "<li style=\"font-size:18px\">"
+            if (link != null)
+                <!--list_entry += "<a href=\"" + link + "\">"-->
+            list_entry += "<b>" + title + "</b>"
+            if (link != null)
+                list_entry += "</a>"
+            list_entry += "<br>" + locations + ".<br>"
+
+            if (abstract != null) {
+                list_entry += "<div id=\"abstract" + paper_count + "\" style=\"display:none\">" + abstract + "</div>"
+                list_entry += "<a href=\"javascript:copy(div" + paper_count + ",abstract" + paper_count + ")\" class = \"button\" >[abstract]</a>"
+            }
+
+            if (slides != null)
+                list_entry += " <a href=\"" + slides + "\" class = \"button\" >[slides]</a>"
+
+            if (recording != null)
+                list_entry += " <a href=\"" + recording + "\" class = \"button\" >[talk]</a>"
+
+            list_entry += "<br>"
+
+            if (msg != null)
+                list_entry += "<i>" + msg + "</i>"
+
+            list_entry +="</li>" + "<div id=\"div" + talk_count + "\" style=\"font-size:18px\"></div><br>"
+
+            document.write(list_entry)
+
+            paper_count += 1
+        }
+
+        document.write("<h2>Talks</h2>")
+        document.write("<ul>")
+
+        add_talk("Title",
+            "location 1, location 2",
+            "Abstract",
+            "https://arxiv.org/abs/1905.03391",
+            "https://www.aimsciences.org/article/doi/10.3934/cpaa.2020159",
+        )
+
+        document.write("</ul>")
+        
+</script>
+
     <h2> Talks</h2>
     <ul>
         <li><a https://www.birs.ca/events/2024/5-day-workshops/24w5169>Frontiers of Statistical Mechanics and Theoretical Computer Science</a>, Aug, 2024, Banff.
