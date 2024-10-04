@@ -214,8 +214,8 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
             list_entry += "<br>" + locations + ".<br>"
 
             if (abstract != null) {
-                list_entry += "<div id=\"abstract" + paper_count + "\" style=\"display:none\">" + abstract + "</div>"
-                list_entry += "<a href=\"javascript:copy(div" + paper_count + ",abstract" + paper_count + ")\" class = \"button\" >[abstract]</a>"
+                list_entry += "<div id=\"abstract" + talk_count + "\" style=\"display:none\">" + abstract + "</div>"
+                list_entry += "<a href=\"javascript:copy(div" + talk_count + ",abstract" + talk_count + ")\" class = \"button\" >[abstract]</a>"
             }
 
             if (slides != null)
@@ -225,9 +225,6 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
                 list_entry += " <a href=\"" + recording + "\" class = \"button\" >[talk]</a>"
 
             list_entry += "<br>"
-
-            if (msg != null)
-                list_entry += "<i>" + msg + "</i>"
 
             list_entry +="</li>" + "<div id=\"div" + talk_count + "\" style=\"font-size:18px\"></div><br>"
 
@@ -249,6 +246,7 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
         document.write("</ul>")
         
 </script>
+<hr>
 <!--
     <h2> Talks</h2>
     <ul>
