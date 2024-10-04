@@ -134,10 +134,10 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 
         function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
             list_entry = "<li style=\"font-size:18px\">"
-            if (link != null)
+            if (title != null)
                 <!--list_entry += "<a href=\"" + link + "\">"-->
             list_entry += "<b>" + title + "</b>"
-            if (link != null)
+            if (authors != null)
                 list_entry += "</a>"
             list_entry += "<br>" + authors + ".<br>" + conference + ".<br>"
 
@@ -200,7 +200,7 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 
 	<!--<span style="font-family: Lato; font-size:17px;">A collection of notes and other expository writing can be found <a href="Notes.html">here</a>.</span>-->
 <hr>
-
+<!--
 <script>
         talk_count = 0
 
@@ -246,7 +246,7 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
         document.write("</ul>")
         
 </script>
-	
+-->
 <hr>
 	
 <!--
