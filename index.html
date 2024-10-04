@@ -127,8 +127,6 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 
 <hr>
 
-
-<!--
 <script>
         paper_count = 0
 
@@ -197,7 +195,6 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
         document.write("</ul>")
         
 </script>
--->
 
 	<!--<span style="font-family: Lato; font-size:17px;">A collection of notes and other expository writing can be found <a href="Notes.html">here</a>.</span>-->
 <hr>
@@ -205,7 +202,7 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 <script>
         talk_count = 0
 
-        function add_talk(title, locations, talk_abstract, slides, recording) {
+        function add_talk(title, locations, slides, recording) {
             list_entry = "<li style=\"font-size:18px\">"
             if (title != null)
                 <!--list_entry += "<a href=\"" + link + "\">"-->
@@ -213,11 +210,6 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
             if (locations != null)
                 list_entry += "</a>"
             list_entry += "<br>" + locations + ".<br>"
-
-            if (talk_abstract != null) {
-		list_entry += "<div id=\"talk_abstract" + talk_count + "\" style=\"display:none\">" + talk_abstract + "</div>"
-                list_entry += "<a href=\"javascript:copy(div" + talk_count + ",talk_abstract" + talk_count + ")\" class = \"button\" >[abstract]</a>"
-            }
 
             if (slides != null)
                 list_entry += " <a href=\"" + slides + "\" class = \"button\" >[slides]</a>"
@@ -239,7 +231,6 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 
         add_talk("Title",
             "location 1 location 2",
-            "we do this and then we do that",
             "https://arxiv.org/abs/1905.03391",
             "https://www.aimsciences.org/article/doi/10.3934/cpaa.2020159"
         )
