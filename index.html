@@ -36,7 +36,8 @@
 }
 	
 </style>
-	
+
+<!--
 <script>
 function copy(dest, source) {
   if(dest.source == source) {
@@ -59,6 +60,7 @@ function copy(dest, source) {
   dest.blur();
 }
 </script>
+-->
 
 <body>
 <div class="container">
@@ -137,47 +139,52 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
     <script>
         let paper_count = 0;
 
-        function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
-            const listEntry = `
-                <li style="font-size:18px">
-                    <b>${title}</b><br>${authors}.<br>${conference}.<br>
-                    ${bib ? `<div id="bib${paper_count}" style="display:none">${bib}</div>
-                    <a href="javascript:copy(div${paper_count}, bib${paper_count})" class="button">[bib]</a>` : ''}
-                    ${abstract ? `
-        <div id="abstract${paper_count}" style="display:none">${abstract}</div>
-        <a href="javascript:copy(document.getElementById('div${paper_count}'), document.getElementById('abstract${paper_count}'))" class="button">[abstract]</a>` : ''}
-                    ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
-                    ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
-                    ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
-                    ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
-                    ${talk ? `<a href="${talk}" class="button">[talk]</a>` : ''}
-                    ${msg ? `<i>${msg}</i>` : ''}
-                </li>
-                <div id="div${paper_count}" style="font-size:18px"></div><br>
-            `;
-            
-            document.getElementById("papersList").innerHTML += listEntry;
-            paper_count++;
-        }
+	function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
+    const listEntry = `
+        <li style="font-size:18px">
+            <b>${title}</b><br>${authors}.<br>${conference}.<br>
+            ${bib ? `<div id="bib${paper_count}" style="display:none">${bib}</div>
+            <a href="javascript:copy('bib${paper_count}')" class="button">[bib]</a>` : ''}
+            ${abstract ? `<div id="abstract${paper_count}" style="display:none">${abstract}</div>
+            <a href="javascript:copy('abstract${paper_count}')" class="button">[abstract]</a>` : ''}
+            ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
+            ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
+            ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
+            ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+            ${talk ? `<a href="${talk}" class="button">[talk]</a>` : ''}
+            ${msg ? `<i>${msg}</i>` : ''}
+        </li>
+    `;
 
-        let talk_count = 0;
+    document.getElementById("papersList").innerHTML += listEntry;
+    paper_count++;
+}
 
-        function add_talk(title, locations, talk_abstract, slides, recording) {
-            const listEntry = `
-                <li style="font-size:18px">
-                    <b>${title}</b><br>${locations}.<br>
-                    ${talk_abstract ? `
-        <div id="talk_abstract${talk_count}" style="display:none">${talk_abstract}</div>
-        <a href="javascript:copy(document.getElementById('div${talk_count}'), document.getElementById('talk_abstract${talk_count}'))" class="button">[abstract]</a>` : ''}
-                    ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
-                    ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
-                </li>
-                <div id="div${talk_count}" style="font-size:18px"></div><br>
-            `;
-            
-            document.getElementById("talksList").innerHTML += listEntry;
-            talk_count++;
-        }
+	let talk_count = 0;
+	    
+function add_talk(title, locations, talk_abstract, slides, recording) {
+    const listEntry = `
+        <li style="font-size:18px">
+            <b>${title}</b><br>${locations}.<br>
+            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none">${talk_abstract}</div>
+            <a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
+            ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+            ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
+        </li>
+    `;
+
+    document.getElementById("talksList").innerHTML += listEntry;
+    talk_count++;
+}
+
+function copy(id) {
+    const element = document.getElementById(id);
+    if (element.style.display === "none") {
+        element.style.display = "block"; // Show the element
+    } else {
+        element.style.display = "none"; // Hide the element
+    }
+}
 
         // Example calls to add papers and talks
         add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
