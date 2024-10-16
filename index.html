@@ -112,7 +112,7 @@ function copy(dest, source) {
 
 
 <p>
-<b>PAGE NOT COMPLETE OR ACCURATE YET.</b>
+<b>PAGE NOT COMPLETE OR ACCURATE YET</b>
 <br>
 <br>
 I am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at the <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant Institute. <!--I am very fortunate to be advised by <a href="https://www.scottnarmstrong.com">Scott Armstrong</a> and <a href="https://cims.nyu.edu/~bauerschmidt/index.html">Roland Bauerschmidt</a>. -->Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
@@ -155,8 +155,8 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
             ${msg ? `<i>${msg}</i>` : ''}
 
             <!-- Hidden divs for bib and abstract with margin and indentation -->
-            ${bib ? `<div id="bib${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px;">${bib}</div>` : ''}
-            ${abstract ? `<div id="abstract${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px;">${abstract}</div>` : ''}
+            ${bib ? `<div id="bib${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${bib}</div>` : ''}
+            ${abstract ? `<div id="abstract${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${abstract}</div>` : ''}
         </li>
     `;
 
@@ -173,14 +173,13 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
             ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
 
             <!-- Hidden div for talk abstract with margin and indentation -->
-            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 20px;">${talk_abstract}</div>` : ''}
+            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${talk_abstract}</div>` : ''}
         </li>
     `;
 
     document.getElementById("talksList").innerHTML += listEntry;
     talk_count++;
 }
-
 
 function copy(id) {
     // Hide the last shown element if it's different from the current one
