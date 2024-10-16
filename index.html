@@ -127,6 +127,63 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 
 <hr>
 
+<div class="container">
+    <h2>Papers</h2>
+    <ul id="papersList"></ul>
+
+    <h2>Talks</h2>
+    <ul id="talksList"></ul>
+
+    <script>
+        let paper_count = 0;
+
+        function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
+            const listEntry = `
+                <li style="font-size:18px">
+                    <b>${title}</b><br>${authors}.<br>${conference}.<br>
+                    ${bib ? `<div id="bib${paper_count}" style="display:none">${bib}</div>
+                    <a href="javascript:copy(div${paper_count}, bib${paper_count})" class="button">[bib]</a>` : ''}
+                    ${abstract ? `<div id="abstract${paper_count}" style="display:none">${abstract}</div>
+                    <a href="javascript:copy(div${paper_count}, abstract${paper_count})" class="button">[abstract]</a>` : ''}
+                    ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
+                    ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
+                    ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
+                    ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+                    ${talk ? `<a href="${talk}" class="button">[talk]</a>` : ''}
+                    ${msg ? `<i>${msg}</i>` : ''}
+                </li>
+                <div id="div${paper_count}" style="font-size:18px"></div><br>
+            `;
+            
+            document.getElementById("papersList").innerHTML += listEntry;
+            paper_count++;
+        }
+
+        let talk_count = 0;
+
+        function add_talk(title, locations, talk_abstract, slides, recording) {
+            const listEntry = `
+                <li style="font-size:18px">
+                    <b>${title}</b><br>${locations}.<br>
+                    ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none">${talk_abstract}</div>
+                    <a href="javascript:copy(div${talk_count}, talk_abstract${talk_count})" class="button">[abstract]</a>` : ''}
+                    ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+                    ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
+                </li>
+                <div id="div${talk_count}" style="font-size:18px"></div><br>
+            `;
+            
+            document.getElementById("talksList").innerHTML += listEntry;
+            talk_count++;
+        }
+
+        // Example calls to add papers and talks
+        add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
+        add_talk("Sample Talk Title", "Location A, Location B", "Sample talk abstract.", "#", "#");
+    </script>
+</div>
+
+<!--	
 <script>
         paper_count = 0
 
@@ -198,7 +255,8 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
 
 	<!--<span style="font-family: Lato; font-size:17px;">A collection of notes and other expository writing can be found <a href="Notes.html">here</a>.</span>-->
 <hr>
-
+-->
+<!--
 <script>
         talk_count = 0
 
@@ -244,7 +302,7 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
         
 </script>
 <hr>
-	
+-->	
 <!--
     <h2> Talks</h2>
     <ul>
