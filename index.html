@@ -139,7 +139,9 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
         let paper_count = 0;
 	let  talk_count = 0;
 
-        function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
+        let lastShown = null; // Variable to track the last shown element
+
+function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
     const listEntry = `
         <li style="font-size:18px">
             <b>${title}</b><br>${authors}.<br>${conference}.<br>
@@ -152,7 +154,7 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
             ${talk ? `<a href="${talk}" class="button">[talk]</a>` : ''}
             ${msg ? `<i>${msg}</i>` : ''}
 
-            <!-- Hidden div for abstract and bib below the buttons -->
+            <!-- Hidden divs for bib and abstract -->
             ${bib ? `<div id="bib${paper_count}" style="display:none">${bib}</div>` : ''}
             ${abstract ? `<div id="abstract${paper_count}" style="display:none">${abstract}</div>` : ''}
         </li>
@@ -170,7 +172,7 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
             ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
 
-            <!-- Hidden div for talk abstract below the buttons -->
+            <!-- Hidden div for talk abstract -->
             ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none">${talk_abstract}</div>` : ''}
         </li>
     `;
@@ -180,6 +182,11 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
 }
 
 function copy(id) {
+    // Hide the last shown element if it's different from the current one
+    if (lastShown && lastShown !== id) {
+        document.getElementById(lastShown).style.display = "none";
+    }
+
     const element = document.getElementById(id);
     if (element.style.display === "none") {
         element.style.display = "block"; // Show the element
@@ -187,12 +194,12 @@ function copy(id) {
         element.style.padding = "10px"; // Adjust padding as needed
         element.style.border = "2px dotted gray"; // Set border
         element.style.background = "#F5F5F5"; // Set background color
+        lastShown = id; // Update the last shown element
     } else {
         element.style.display = "none"; // Hide the element
+        lastShown = null; // Reset last shown if hiding
     }
 }
-
-
 
         // Example calls to add papers and talks
         add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
