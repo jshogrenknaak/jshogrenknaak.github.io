@@ -154,9 +154,9 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
             ${talk ? `<a href="${talk}" class="button">[talk]</a>` : ''}
             ${msg ? `<i>${msg}</i>` : ''}
 
-            <!-- Hidden divs for bib and abstract with margin -->
-            ${bib ? `<div id="bib${paper_count}" style="display:none; margin-top: 10px;">${bib}</div>` : ''}
-            ${abstract ? `<div id="abstract${paper_count}" style="display:none; margin-top: 10px;">${abstract}</div>` : ''}
+            <!-- Hidden divs for bib and abstract with margin and indentation -->
+            ${bib ? `<div id="bib${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px;">${bib}</div>` : ''}
+            ${abstract ? `<div id="abstract${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px;">${abstract}</div>` : ''}
         </li>
     `;
 
@@ -172,14 +172,15 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
             ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
 
-            <!-- Hidden div for talk abstract with margin -->
-            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px;">${talk_abstract}</div>` : ''}
+            <!-- Hidden div for talk abstract with margin and indentation -->
+            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 20px;">${talk_abstract}</div>` : ''}
         </li>
     `;
 
     document.getElementById("talksList").innerHTML += listEntry;
     talk_count++;
 }
+
 
 function copy(id) {
     // Hide the last shown element if it's different from the current one
