@@ -75,11 +75,22 @@ function updateSelectedPapers() {
 }
 
 function copy(id) {
+    // Hide the last shown element if it's different from the current one
+    if (lastShown && lastShown !== id) {
+        document.getElementById(lastShown).style.display = "none";
+    }
+
     const element = document.getElementById(id);
     if (element.style.display === "none") {
         element.style.display = "block"; // Show the element
+        element.style.width = "800px"; // Adjust width as needed
+        element.style.padding = "10px"; // Adjust padding as needed
+        element.style.border = "2px dotted gray"; // Set border
+        element.style.background = "#F5F5F5"; // Set background color
+        lastShown = id; // Update the last shown element
     } else {
         element.style.display = "none"; // Hide the element
+        lastShown = null; // Reset last shown if hiding
     }
 }
 
