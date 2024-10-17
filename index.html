@@ -186,8 +186,8 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
                 ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
             </span>
 
-            <!-- Hidden div for talk abstract with margin and indentation -->
-            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 40px; max-width: 100%; width: calc(100% - 40px);">${talk_abstract}</div>` : ''}
+            <!-- Hidden div for talk abstract with adjusted padding for alignment -->
+            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 40px; max-width: 100%; width: calc(100% - 60px);">${talk_abstract}</div>` : ''}
         </li>
     `;
 
