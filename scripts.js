@@ -3,7 +3,7 @@ let papers = [
         title: "Sample Paper 1",
         authors: "Author One",
         conference: "Sample Conference",
-        selected: false,
+        selected: true,
         bib: "Sample Bib",
         abstract: "Sample abstract for paper 1.",
         arxiv_link: "#",
