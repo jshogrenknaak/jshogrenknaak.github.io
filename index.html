@@ -34,6 +34,15 @@
     display:none;
   }
 }
+
+#talksList li:before {
+    content: "■"; /* Unicode character for a solid square */
+    color: black; /* Color of the square */
+    display: inline-block; /* Ensures it sits nicely beside text */
+    width: 1em; /* Adjust width for spacing */
+    margin-right: 10px; /* Space between square and text */
+    font-size: 1.2em; /* Size of the square */
+}
 	
 </style>
 
@@ -133,7 +142,7 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
     <ul id="papersList"></ul>
     <hr>	
     <h2>Talks</h2>
-    <ul id="talksList"></ul>
+    <ul id='talksList' style='list-style-type: none; padding-left: 0;'>
 
     <script>
         let paper_count = 0;
@@ -166,8 +175,8 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
 
 function add_talk(title, locations, talk_abstract, slides, recording) {
     const listEntry = `
-        <li style="font-size:18px; list-style-type: disc; padding-left: 20px;">
-            <b style="list-style-type: none;">&#9673; ${title}</b><br>${locations}.<br>
+        <li style="font-size:18px; padding-left: 20px;">
+            <b>${title}</b><br>${locations}.<br>
             ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
             ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
@@ -180,7 +189,6 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     document.getElementById("talksList").innerHTML += listEntry;
     talk_count++;
 }
-
 
 
 function copy(id) {
