@@ -155,16 +155,15 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
     const listEntry = `
         <li style="font-size:18px">
             <b>${title}</b><br>${authors}.<br>${conference}.<br>
+            ${talk ? `<a href="#${title.replace(/\s+/g, '_')}" class="button">[talk]</a>` : ''}
             ${bib ? `<a href="javascript:copy('bib${paper_count}')" class="button">[bib]</a>` : ''}
             ${abstract ? `<a href="javascript:copy('abstract${paper_count}')" class="button">[abstract]</a>` : ''}
             ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
             ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
             ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
-            ${talk ? `<a href="${talk}" class="button">[talk]</a>` : ''}
             ${msg ? `<i>${msg}</i>` : ''}
 
-            <!-- Hidden divs for bib and abstract with margin and indentation -->
             ${bib ? `<div id="bib${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${bib}</div>` : ''}
             ${abstract ? `<div id="abstract${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${abstract}</div>` : ''}
         </li>
@@ -174,9 +173,10 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
     paper_count++;
 }
 
+
 function add_talk(title, locations, talk_abstract, slides, recording) {
     const listEntry = `
-        <li style="font-size:18px; padding-left: 20px;">
+        <li id="${title.replace(/\s+/g, '_')}" style="font-size:18px; padding-left: 20px;">
             <b>${title}</b><br>
             <span style="padding-left: 20px;">${locations}</span><br>
             <span style="padding-left: 20px;">
@@ -184,8 +184,6 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
                 ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
                 ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
             </span>
-
-            <!-- Hidden div for talk abstract with adjusted padding for proper alignment -->
             ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 40px; margin-left: 20px; max-width: 100%; width: calc(100% - 60px);">${talk_abstract}</div>` : ''}
         </li>
     `;
@@ -193,6 +191,7 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     document.getElementById("talksList").innerHTML += listEntry;
     talk_count++;
 }
+
 
 function copy(id) {
     // Hide the last shown element if it's different from the current one
@@ -215,17 +214,17 @@ function copy(id) {
 }
 
         // Example calls to add papers and talks
-        add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
-	add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
-        add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
-	add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
-	add_paper("Sample Paper Title", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
+        add_paper("Sample Paper Title1", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
+	add_paper("Sample Paper Title2", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
+        add_paper("Sample Paper Title3", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
+	add_paper("Sample Paper Title4", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
+	add_paper("Sample Paper Title5", "Author One, Author Two", "Sample Conference", "#", "Sample Bib", "Sample abstract.", "#", "#", "#", "#", "#", "#");
 	  
+	add_talk("Sample Paper Title1", "Location A, Location B", "Sample talk abstract.", "#", "#");
+	add_talk("Sample Paper Title4", "Location A, Location B", "Sample talk abstract.", "#", "#");
 	add_talk("Sample Talk Title", "Location A, Location B", "Sample talk abstract.", "#", "#");
 	add_talk("Sample Talk Title", "Location A, Location B", "Sample talk abstract.", "#", "#");
-	add_talk("Sample Talk Title", "Location A, Location B", "Sample talk abstract.", "#", "#");
-	add_talk("Sample Talk Title", "Location A, Location B", "Sample talk abstract.", "#", "#");
-	add_talk("Sample Talk Title", "Location A, Location B", "Sample talk abstract.", "#", "#");
+	add_talk("Sample Paper Title2", "Location A, Location B", "Sample talk abstract.", "#", "#");
     </script>
 </div>
 
