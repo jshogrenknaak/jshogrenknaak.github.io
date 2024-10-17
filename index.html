@@ -148,32 +148,32 @@ Currently I organize <a href="https://math.nyu.edu/dynamic/">whatever</a> (curre
     <ul id='talksList' style='list-style-type: none; padding-left: 0;'>
 
     <script>
-        let paper_count = 0;
+        //let paper_count = 0;
 	let  talk_count = 0;
 
         let lastShown = null; // Variable to track the last shown element
 
-function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
-    const listEntry = `
-        <li style="font-size:18px">
-            <b>${title}</b><br>${authors}.<br>${conference}.<br>
-            ${bib ? `<a href="javascript:copy('bib${paper_count}')" class="button">[bib]</a>` : ''}
-            ${abstract ? `<a href="javascript:copy('abstract${paper_count}')" class="button">[abstract]</a>` : ''}
-            ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
-            ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
-	    ${talk ? `<a href="#${title.replace(/\s+/g, '_')}" class="button">[talk]</a>` : ''}
-            ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
-            ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
-            ${msg ? `<i>${msg}</i>` : ''}
+// function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, journal_link, data, slides, talk, msg) {
+//     const listEntry = `
+//         <li style="font-size:18px">
+//             <b>${title}</b><br>${authors}.<br>${conference}.<br>
+//             ${bib ? `<a href="javascript:copy('bib${paper_count}')" class="button">[bib]</a>` : ''}
+//             ${abstract ? `<a href="javascript:copy('abstract${paper_count}')" class="button">[abstract]</a>` : ''}
+//             ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
+//             ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
+// 	    ${talk ? `<a href="#${title.replace(/\s+/g, '_')}" class="button">[talk]</a>` : ''}
+//             ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
+//             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+//             ${msg ? `<i>${msg}</i>` : ''}
 
-            ${bib ? `<div id="bib${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${bib}</div>` : ''}
-            ${abstract ? `<div id="abstract${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${abstract}</div>` : ''}
-        </li>
-    `;
+//             ${bib ? `<div id="bib${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${bib}</div>` : ''}
+//             ${abstract ? `<div id="abstract${paper_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${abstract}</div>` : ''}
+//         </li>
+//     `;
 
-    document.getElementById("papersList").innerHTML += listEntry;
-    paper_count++;
-}
+//     document.getElementById("papersList").innerHTML += listEntry;
+//     paper_count++;
+// }
 
 
 function add_talk(title, locations, talk_abstract, slides, recording) {
