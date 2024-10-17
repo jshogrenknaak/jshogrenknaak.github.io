@@ -39,10 +39,12 @@
     content: "■"; /* Unicode character for a solid square */
     color: black; /* Color of the square */
     display: inline-block; /* Ensures it sits nicely beside text */
-    width: 1em; /* Adjust width for spacing */
+    width: 0.8em; /* Smaller width for the square */
     margin-right: 10px; /* Space between square and text */
-    font-size: 1.2em; /* Size of the square */
+    font-size: 0.8em; /* Adjusted size of the square */
+    vertical-align: middle; /* Aligns the square with the text */
 }
+
 	
 </style>
 
@@ -121,7 +123,7 @@ function copy(dest, source) {
 
 
 <p>
-<b>PAGE NOT COMPLETE OR ACCURATE YET.</b>
+<b>PAGE NOT COMPLETE OR ACCURATE YET</b>
 <br>
 <br>
 I am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at the <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant Institute. <!--I am very fortunate to be advised by <a href="https://www.scottnarmstrong.com">Scott Armstrong</a> and <a href="https://cims.nyu.edu/~bauerschmidt/index.html">Roland Bauerschmidt</a>. -->Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
@@ -176,20 +178,22 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
 function add_talk(title, locations, talk_abstract, slides, recording) {
     const listEntry = `
         <li style="font-size:18px; padding-left: 20px;">
-            <b>${title}</b><br>${locations}.<br>
-            ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
-            ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
-            ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
+            <b>${title}</b><br>
+            <span style="padding-left: 20px;">${locations}</span><br>
+            <span style="padding-left: 20px;">
+                ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
+                ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+                ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
+            </span>
 
             <!-- Hidden div for talk abstract with margin and indentation -->
-            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 20px; max-width: 100%; width: calc(100% - 40px);">${talk_abstract}</div>` : ''}
+            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 40px; max-width: 100%; width: calc(100% - 40px);">${talk_abstract}</div>` : ''}
         </li>
     `;
 
     document.getElementById("talksList").innerHTML += listEntry;
     talk_count++;
 }
-
 
 function copy(id) {
     // Hide the last shown element if it's different from the current one
