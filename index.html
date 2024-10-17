@@ -155,11 +155,11 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
     const listEntry = `
         <li style="font-size:18px">
             <b>${title}</b><br>${authors}.<br>${conference}.<br>
-            ${talk ? `<a href="#${title.replace(/\s+/g, '_')}" class="button">[talk]</a>` : ''}
             ${bib ? `<a href="javascript:copy('bib${paper_count}')" class="button">[bib]</a>` : ''}
             ${abstract ? `<a href="javascript:copy('abstract${paper_count}')" class="button">[abstract]</a>` : ''}
             ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
             ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
+	    ${talk ? `<a href="#${title.replace(/\s+/g, '_')}" class="button">[talk]</a>` : ''}
             ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
             ${msg ? `<i>${msg}</i>` : ''}
