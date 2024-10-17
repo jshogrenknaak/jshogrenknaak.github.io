@@ -28,6 +28,8 @@ let papers = [
     // Add more papers as needed
 ];
 
+let lastShown = null; // Variable to track the last shown element
+
 function renderPapers() {
     const papersList = document.getElementById('papersList');
     const allPapersList = document.getElementById('allPapersList');
