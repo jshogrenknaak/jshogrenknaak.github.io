@@ -166,7 +166,8 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
 
 function add_talk(title, locations, talk_abstract, slides, recording) {
     const listEntry = `
-        <li style="font-size:18px">
+        <li style="font-size:18px; list-style-type: none; padding-left: 20px;">
+            <span style="font-weight: bold;">&#9673;</span> <!-- Hollow circle bullet -->
             <b>${title}</b><br>${locations}.<br>
             ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
@@ -180,6 +181,7 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     document.getElementById("talksList").innerHTML += listEntry;
     talk_count++;
 }
+
 
 function copy(id) {
     // Hide the last shown element if it's different from the current one
