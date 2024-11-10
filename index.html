@@ -179,7 +179,7 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
             <span style="padding-left: 20px;">${locations}</span><br>
             <span style="padding-left: 20px;">
                 ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
-                ${slides ? `<a href="${slides}" target="_blank" class="button">[slides]</a>` : ''}
+                ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
                 ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
             </span>
             ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 40px; margin-left: 20px; max-width: 100%; width: calc(100% - 60px);">${talk_abstract}</div>` : ''}
