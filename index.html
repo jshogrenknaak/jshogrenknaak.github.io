@@ -40,7 +40,7 @@
     color: black; /* Color of the square */
     display: inline-block; /* Ensures it sits nicely beside text */
     width: 0.5em; /* Smaller width for the square */
-    margin-right: 10px; /* Space between square and text */
+    margin-right: 12px; /* Space between square and text */
     font-size: 0.5em; /* Adjusted size of the square */
     vertical-align: middle; /* Aligns the square with the text */
 } 
@@ -62,7 +62,7 @@
 
 /* Style for location (and other elements like abstract) */
 #talksList li > span {
-    padding-left: 18px;
+    padding-left: 20px;
     flex-basis: 100%; /* Ensure it takes the full width if the title wraps */
 }
 
@@ -201,8 +201,8 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     const listEntry = `
         <li id="${safeTitle}" style="font-size:18px; padding-left: 20px;">
             <b>${title}</b><br>
-	    <span style="padding-left: 18px;">${locations}</span>
-            <span style="padding-left: 18px;">
+	    <span style="padding-left: 20px;">${locations}</span>
+            <span style="padding-left: 20px;">
                 ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
                 ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
                 ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
