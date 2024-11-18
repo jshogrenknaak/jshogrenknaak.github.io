@@ -51,19 +51,30 @@
     display: flex; /* Use flexbox for alignment */
     flex-wrap: wrap; /* Allow wrapping of content */
     align-items: flex-start; /* Align items at the start */
-    padding-left: 20px;
+    padding-left: 20px; /* Consistent padding on the left for the whole list item */
+    margin-bottom: 10px; /* Add some space between talks */
+    position: relative; /* For better positioning */
 }
 
 /* The title part will take up available space */
-#talksList li > b {
+#talksList li > div.title-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the top of the container */
+    flex-wrap: wrap;
+    width: 100%; /* Ensure it spans the full width of the container */
+    margin-right: 20px;
+}
+
+/* The title itself will take up available space */
+#talksList li > div.title-container > b {
     flex: 1; /* Allow title to take up available space */
-    margin-right: 20px; /* Ensure some space between title and location/abstract */
+    margin-right: 20px; /* Ensure space between title and other content */
 }
 
 /* Style for location (and other elements like abstract) */
-#talksList li > span {
-    padding-left: 20px;
-    flex-basis: 100%; /* Ensure it takes the full width if the title wraps */
+#talksList li > div.content-container {
+    width: 100%; /* Ensure the location and other content span the full width */
+    padding-left: 40px; /* Indentation for content */
 }
 
 
@@ -146,7 +157,7 @@ function copy(dest, source) {
 
 <!-- <div class="container"> -->
 <p>
-II am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
+I am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
 <br>
 <br>
 I am mainly interested in probability and PDEs, specifically their connections to statistical mechanics. <!--I particularly  like problems that are multiscale and/or dynamical in nature.-->
@@ -196,26 +207,29 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
 }
 
 function add_talk(title, locations, talk_abstract, slides, recording) {
-	// Generate a safe ID for the <li> by replacing spaces and special characters
+    // Generate a safe ID for the <li> by replacing spaces and special characters
     const safeTitle = title.replace(/\s+/g, '_').replace(/[^\w\s]/gi, '');
 
     const listEntry = `
-        <li id="${safeTitle}" style="font-size:18px; padding-left: 20px;">
-            <b>${title}</b><br>
-	    <span style="padding-left: 20px;">${locations}</span>
-            <span style="padding-left: 20px;">
-                ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
-                ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
-                ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
-            </span>
-            ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 40px; margin-left: 20px; max-width: 100%; width: calc(100% - 60px);">${talk_abstract}</div>` : ''}
+        <li id="${safeTitle}">
+            <div class="title-container">
+                <b>${title}</b>
+            </div>
+            <div class="content-container">
+                <span>${locations}</span> <!-- The location is wrapped in a <span> -->
+                <span>
+                    ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
+                    ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+                    ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
+                </span>
+                ${talk_abstract ? `<div id="talk_abstract${talk_count}" class="talk-abstract">${talk_abstract}</div>` : ''}
+            </div>
         </li>
     `;
 
     document.getElementById("talksList").innerHTML += listEntry;
     talk_count++;
 }
-
 
 function copy(id) {
     // Hide the last shown element if it's different from the current one
