@@ -35,15 +35,7 @@
   }
 }
 
-#talksList li:before {
-    content: "■"; /* Unicode character for a solid square */
-    color: black; /* Color of the square */
-    display: inline-block; /* Ensures it sits nicely beside text */
-    width: 0.5em; /* Smaller width for the square */
-    margin-right: 10px; /* Space between square and text */
-    font-size: 0.5em; /* Adjusted size of the square */
-    vertical-align: middle; /* Aligns the square with the text */
-}
+
 
 	
 </style>
@@ -177,13 +169,11 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     const safeTitle = title.replace(/\s+/g, '_').replace(/[^\w\s]/gi, '');
 
     const listEntry = `
-        <li id="${safeTitle}" style="font-size:18px; padding-left: 20px;">
-            <b>${title}</b><br>
-	    <span style="padding-left: 20px;">${locations}</span>
-            <span style="padding-left: 20px;">
-                ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
-                ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
-                ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
+        <li id="${safeTitle}" style="font-size:18px">
+            <b>${title}</b><br>${locations}.<br>
+            ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
+            ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
+            ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
             </span>
             ${talk_abstract ? `<div id="talk_abstract${talk_count}" style="display:none; margin-top: 10px; padding-left: 40px; margin-left: 20px; max-width: 100%; width: calc(100% - 60px);">${talk_abstract}</div>` : ''}
         </li>
