@@ -123,7 +123,7 @@ function copy(dest, source) {
 
 <!-- <div class="container"> -->
 <p>
-I am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
+II am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
 <br>
 <br>
 I am mainly interested in probability and PDEs, specifically their connections to statistical mechanics. <!--I particularly  like problems that are multiscale and/or dynamical in nature.-->
@@ -158,7 +158,7 @@ function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, 
             ${abstract ? `<a href="javascript:copy('abstract${paper_count}')" class="button">[abstract]</a>` : ''}
             ${arxiv_link ? `<a href="${arxiv_link}" class="button">[arXiv]</a>` : ''}
             ${journal_link ? `<a href="${journal_link}" class="button">[journal]</a>` : ''}
-	    ${talk ? `<a href="#${title.replace(/\s+/g, '_').replace(/[^\w\s]/gi, '')}" class="button">[talk]</a>` : ''}
+	    ${talk ? `<a href="#${talk.replace(/\s+/g, '_').replace(/[^\w\s]/gi, '')}" class="button">[talk]</a>` : ''}
             ${data ? `<a href="${data}" class="button">[data]</a>` : ''}
             ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
             ${msg ? `<i>${msg}</i>` : ''}
