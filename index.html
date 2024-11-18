@@ -179,7 +179,6 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     const listEntry = `
         <li id="${safeTitle}" style="font-size:18px; padding-left: 20px;">
             <b>${title}</b><br>${locations}.<br>
-            // <span style="padding-left: 20px;">${locations}</span><br>
             <span style="padding-left: 20px;">
                 ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
                 ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
