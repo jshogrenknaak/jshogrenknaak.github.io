@@ -112,7 +112,7 @@ function copy(dest, source) {
 
 <!-- <div class="container"> -->
 <p>
-II am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
+I am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
 <br>
 <br>
 I am mainly interested in probability and PDEs, specifically their connections to statistical mechanics. <!--I particularly  like problems that are multiscale and/or dynamical in nature.-->
@@ -166,10 +166,8 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     const safeTitle = title.replace(/\s+/g, '_').replace(/[^\w\s]/gi, '');
 
     const listEntry = `
-        <li id="${safeTitle}" style="font-size:18px; padding-left: 20px; list-style-type:square;">
-            <b>${title}</b><br>
-	    <span style="padding-left: 20px;">${locations}</span>
-            <span style="padding-left: 20px;">
+        <li id="${safeTitle}" style="font-size:18px; list-style-type:square;">
+            <b>${title}</b><br>${locations}.<br>
                 ${talk_abstract ? `<a href="javascript:copy('talk_abstract${talk_count}')" class="button">[abstract]</a>` : ''}
                 ${slides ? `<a href="${slides}" class="button">[slides]</a>` : ''}
                 ${recording ? `<a href="${recording}" class="button">[recording]</a>` : ''}
