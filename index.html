@@ -34,39 +34,6 @@
     display:none;
   }
 }
-
-#talksList li:before {
-    content: "■"; /* Unicode character for a solid square */
-    color: black; /* Color of the square */
-    display: inline-block; /* Ensures it sits nicely beside text */
-    width: 0.5em; /* Smaller width for the square */
-    margin-right: 15px; /* Space between square and text */
-    font-size: 0.5em; /* Adjusted size of the square */
-    vertical-align: middle; /* Aligns the square with the text */
-} 
-
-/* Style the talk list item to use flexbox for better alignment */
-#talksList li {
-    font-size: 18px;
-    display: flex; /* Use flexbox for alignment */
-    flex-wrap: wrap; /* Allow wrapping of content */
-    align-items: flex-start; /* Align items at the start */
-    padding-left: 20px;
-}
-
-/* The title part will take up available space */
-#talksList li > b {
-    flex: 1; /* Allow title to take up available space */
-    margin-right: 20px; /* Ensure some space between title and location/abstract */
-}
-
-/* Style for location (and other elements like abstract) */
-#talksList li > span {
-    padding-left: 20px;
-    flex-basis: 100%; /* Ensure it takes the full width if the title wraps */
-}
-
-
 	
 </style>
 
@@ -145,7 +112,7 @@ function copy(dest, source) {
 
 <!-- <div class="container"> -->
 <p>
-I am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
+II am a first-year graduate student in the <a href="https://math.nyu.edu/dynamic/">Department of Mathematics</a> at <!--<a href="https://cims.nyu.edu/dynamic/">-->Courant. Prior to Courant, I did my undergraduate studies at <!--<a href="https://www.stanford.edu">-->Stanford University.
 <br>
 <br>
 I am mainly interested in probability and PDEs, specifically their connections to statistical mechanics. <!--I particularly  like problems that are multiscale and/or dynamical in nature.-->
@@ -199,7 +166,7 @@ function add_talk(title, locations, talk_abstract, slides, recording) {
     const safeTitle = title.replace(/\s+/g, '_').replace(/[^\w\s]/gi, '');
 
     const listEntry = `
-        <li id="${safeTitle}" style="font-size:18px; padding-left: 20px;">
+        <li id="${safeTitle}" style="font-size:18px; padding-left: 20px; list-style-type:square;">
             <b>${title}</b><br>
 	    <span style="padding-left: 20px;">${locations}</span>
             <span style="padding-left: 20px;">
